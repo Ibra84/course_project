@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 import duckdb
+from waitress import serve
 
 # Инициализация Dash приложения
 app = dash.Dash(__name__)
@@ -142,6 +143,4 @@ def update_charts(selected_product, selected_region):
     
     return fig_sales_by_product, fig_sales_by_region, fig_sales_over_time, fig_top_products
 
-# Запуск приложения
-if __name__ == '__main__':
-    app.run_server(debug=True)
+
